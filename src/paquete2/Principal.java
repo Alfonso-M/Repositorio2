@@ -7,6 +7,7 @@ package paquete2;
 
 import java.util.ArrayList;
 import java.util.List;
+import paquete1.Pokemon;
 import paquete1.Tipo;
 
 /**
@@ -19,11 +20,38 @@ public class Principal {
         agua.setNombre("agua");
         
         Tipo fuego =  new Tipo();
-        agua.setNombre("fuego");
+        fuego.setNombre("fuego");
+        
+         Tipo planta =  new Tipo();
+        planta.setNombre("planta");
     
         List<Tipo> debilidadesFuego = new ArrayList<>();
         debilidadesFuego.add(agua);
         
         fuego.setDebilidades(debilidadesFuego);
+        
+        //////////////////////////////////////////////
+        Pokemon bulbasaur = new Pokemon();
+        bulbasaur.setAtaque(25);
+        bulbasaur.setHp(100);
+        bulbasaur.setTipo(planta);
+        bulbasaur.setNombre("Bulbasaur");
+        
+        Pokemon charmander = new Pokemon();
+        charmander.setAtaque(30);
+        charmander.setHp(75);
+        charmander.setTipo(fuego);
+        charmander.setNombre("Charmander");
+        
+        int turno=0;
+        while(charmander.getHp()>0 && bulbasaur.getHp()>0){
+            if(turno%2==0)
+                bulbasaur.atacar(charmander);
+            else
+                charmander.atacar(bulbasaur);
+            turno++;
+        }
+        System.out.println(bulbasaur);
+        System.out.println(charmander);
     }
 }

@@ -20,6 +20,13 @@ public class Pokemon {
     private int hp;
     private int exp;
 
+    public void atacar(Pokemon enemigo){
+        int vida=enemigo.getHp();
+        vida=vida-this.getAtaque();
+        enemigo.setHp(vida);
+    }
+    
+    //GETTERS Y SETTERS
     public String getNombre() {
         return nombre;
     }
@@ -78,6 +85,6 @@ public class Pokemon {
 
     @Override
     public String toString() {
-        return "Pokemon: " + nombre + " de tipo: " +tipo +" con nivel: "+ nivel;
+        return "Pokemon: " + nombre + " de tipo: " +tipo +" con nivel: "+ nivel+ " HP= "+hp;
     }
 }

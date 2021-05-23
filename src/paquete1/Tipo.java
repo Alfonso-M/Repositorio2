@@ -59,4 +59,9 @@ public class Tipo {
     public void setDebilidades(List<Tipo> debilidades) {
         this.debilidades = debilidades;
     }
+
+    @Override
+    public String toString() {
+        return "Tipo{" + "nombre=" + nombre + '}';
+    }
 }
